@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://ra6kcxpqm4cs"]
+
+[ext_resource type="ArrayMesh" uid="uid://bsg4jmh8f4gfq" path="res://blender_vfx/lightning_editable.tres" id="1_0hvsa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k2l7w"]
+
+[sub_resource type="Sky" id="Sky_q3lul"]
+sky_material = SubResource("ShaderMaterial_k2l7w")
+
+[sub_resource type="Environment" id="Environment_khrof"]
+background_mode = 2
+sky = SubResource("Sky_q3lul")
+
+[node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_khrof")
+
+[node name="LightningVfxMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168019, 0, -0.0575905)
+mesh = ExtResource("1_0hvsa")
