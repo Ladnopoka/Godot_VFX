@@ -17,7 +17,14 @@ sky = SubResource("Sky_q3lul")
 gradient = SubResource("Gradient_oj500")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mdsw6"]
+lifetime_randomness = 0.1
+particle_flag_rotate_y = true
+emission_shape = 3
+emission_box_extents = Vector3(4, 0, 4)
+angle_min = -180.0
+angle_max = 180.0
 gravity = Vector3(0, 0, 0)
+scale_max = 2.0
 color_ramp = SubResource("GradientTexture1D_nbmep")
 
 [node name="World" type="Node3D"]
@@ -26,7 +33,7 @@ color_ramp = SubResource("GradientTexture1D_nbmep")
 environment = SubResource("Environment_khrof")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-amount = 1
+amount = 2
 lifetime = 0.25
 process_material = SubResource("ParticleProcessMaterial_mdsw6")
 draw_pass_1 = ExtResource("1_0hvsa")
