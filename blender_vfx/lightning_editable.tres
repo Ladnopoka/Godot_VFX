@@ -1,10 +1,16 @@
-[gd_resource type="ArrayMesh" load_steps=3 format=3 uid="uid://bsg4jmh8f4gfq"]
+[gd_resource type="ArrayMesh" load_steps=5 format=3 uid="uid://bsg4jmh8f4gfq"]
 
 [ext_resource type="Shader" uid="uid://cd8a6kfsards" path="res://resources/lightning_shader.tres" id="1_ggs61"]
+[ext_resource type="Shader" uid="uid://quv1sxdkplyy" path="res://resources/mark_shader.tres" id="2_pmsuv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1kgl0"]
 render_priority = 0
 shader = ExtResource("1_ggs61")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_di3s0"]
+render_priority = 0
+shader = ExtResource("2_pmsuv")
+shader_parameter/mark_color = Color(0.5, 1, 3, 1)
 
 [resource]
 _surfaces = [{
@@ -25,6 +31,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 6,
 "index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_di3s0"),
 "name": "Material",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

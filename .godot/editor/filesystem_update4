@@ -1,3 +1,4 @@
 res://worlds/world1.tscn
-res://blender_vfx/lightning_editable.tres
 res://resources/lightning_shader.tres
+res://resources/mark_shader.tres
+res://blender_vfx/lightning_editable.tres
