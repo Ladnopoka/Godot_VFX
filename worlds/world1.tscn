@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ra6kcxpqm4cs"]
+[gd_scene load_steps=8 format=3 uid="uid://ra6kcxpqm4cs"]
 
 [ext_resource type="ArrayMesh" uid="uid://bsg4jmh8f4gfq" path="res://blender_vfx/lightning_editable.tres" id="1_0hvsa"]
 
@@ -11,11 +11,22 @@ sky_material = SubResource("ShaderMaterial_k2l7w")
 background_mode = 2
 sky = SubResource("Sky_q3lul")
 
+[sub_resource type="Gradient" id="Gradient_oj500"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nbmep"]
+gradient = SubResource("Gradient_oj500")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mdsw6"]
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_nbmep")
+
 [node name="World" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_khrof")
 
-[node name="LightningVfxMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168019, 0, -0.0575905)
-mesh = ExtResource("1_0hvsa")
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 1
+lifetime = 0.25
+process_material = SubResource("ParticleProcessMaterial_mdsw6")
+draw_pass_1 = ExtResource("1_0hvsa")
